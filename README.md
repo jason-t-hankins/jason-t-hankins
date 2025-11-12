@@ -1,16 +1,16 @@
-## Hi there 👋
+## Hi I'm Jason Hankins :)
 
-<!--
-**jason-t-hankins/jason-t-hankins** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+### About Me
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I'm a Fullstack Developer and UI/UX specialist based in Philadelphia, PA. 
+
+### Currently Working On:
+
+[https://github.com/simnova/sharethrift/]
+
+### Connect With Me!
+
+[https://github.com/jason-t-hankins/] <br>
+[https://jasonhankins.neocities.org/] <br>
+[https://www.linkedin.com/in/jasonhankins1/] <br>
