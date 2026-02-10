@@ -8,6 +8,7 @@ I'm a Fullstack Developer and UI/UX specialist based in Philadelphia, PA.
 ### Currently Working On:
 
 [https://github.com/simnova/sharethrift/]
+[https://github.com/ecfmg/pathways/]
 
 ### Connect With Me!
 
