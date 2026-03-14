@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jason hankins portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="background-welcome" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-10;pointer-events:none;width:100vw;text-align:center;">
+        <span style="color:white;opacity:0.35;font-size:1.3rem;letter-spacing:2px;user-select:none;">welcome to jason's site! open an application above</span>
+    </div>
+    <header>
+            <div class="container">
+                <nav>
+                    <div style="display:flex; align-items:center; width:100%; padding-left:22px; padding-right:8px; box-sizing:border-box;">
+                        <span onclick="location.hash='';" style="font-weight:bold; font-size:1.6rem; cursor:pointer; display:block; margin-right:32px; min-width:170px; text-align:left;">jason hankins</span>
+                        <div style="display:flex; gap:6px; margin-left:auto;">
+                            <button onclick="location.hash='projects';" style="font-size:1.08rem; padding:6px 14px;">Projects</button>
+                            <button onclick="location.hash='ux';" style="font-size:1.08rem; padding:6px 14px;">UX</button>
+                            <button onclick="location.hash='creative';" style="font-size:1.08rem; padding:6px 14px;">Creative</button>
+                            <button onclick="showAboutWindow();" style="font-size:1.08rem; padding:6px 14px;">About</button>
+                            <a href='Jason Hankins - UX.pdf' target="_blank"><button style="font-size:1.08rem; padding:6px 14px;">Resume</button></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+    </header>
+    
+    <main>
+        <div id="home-content" style="display:none;"></div>
+        <div id="main-window" class="window" style="max-width:48rem; margin:32px auto 0 auto; min-height:320px; display:none; background: #c0c0c0;">
+            <div class="title-bar" id="main-title-bar">
+                <div class="title-bar-text" id="section-title">jason-hankins/home</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="location.hash='';"></button>
+                </div>
+            </div>
+            <div class="window-body" id="section-content" style="overflow-y:scroll; height:60vh; min-height:120px;"></div>
+            <div id="resize-handle" style="width:100%; height:14px; cursor:ns-resize; background:transparent;"></div>
+        </div>
+    </main>
+  
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Jason Hankins. with ❤.</p>
+      </div>
+    </footer>
+    
+    <script>
+    // --- Resizable content logic ---
+    const resizeHandle = document.getElementById('resize-handle');
+    const sectionContent = document.getElementById('section-content');
+    let isResizing = false;
+    let startY = 0;
+    let startHeight = 0;
+
+    resizeHandle.addEventListener('mousedown', function(e) {
+        isResizing = true;
+        startY = e.clientY;
+        startHeight = sectionContent.offsetHeight;
+        document.body.style.userSelect = 'none';
+    });
+
+    window.addEventListener('mousemove', function(e) {
+        if (!isResizing) return;
+        let dy = e.clientY - startY;
+        let newHeight = Math.max(120, startHeight + dy);
+        // Allow resizing beyond content height, up to viewport
+        let maxHeight = window.innerHeight - 80;
+        sectionContent.style.height = Math.min(newHeight, maxHeight) + 'px';
+    });
+
+    window.addEventListener('mouseup', function() {
+        isResizing = false;
+        document.body.style.userSelect = '';
+    });
+    // Section data
+    const projects = [
+        {
+            name: '"Sharethrift" Web Application',
+            url: 'https://github.com/simnova/sharethrift',
+            desc: 'Contributed to the development of a sample web application for Intealth to showcase the future of the way we develop applications!'
+        },
+        {
+            name: '"Exploring National Parks" Web Application',
+            url: 'https://github.com/cis3296f23/Exploring-National-Parks',
+            desc: 'Contributed to the development of a web application to help users find national parks and create personalized schedules utilizing the NPS API.'
+        },
+        {
+            name: 'WavEase',
+            url: 'https://github.com/Capstone-Projects-2024-Spring/project-waveease',
+            desc: 'Gesture Recognition Software. Capstone-Projects-2024-Spring.'
+        },
+        {
+            name: 'LangChat AI',
+            url: 'https://github.com/tul53850/LangChat',
+            desc: 'AI assisted language tutor. Designed the frontend and backend.'
+        }
+    ];
+    const ux = [
+        {
+            name: '"LiveLine" - User Research',
+            url: 'https://lt34za.axshare.com/',
+            desc: 'Encompassing the entire iterative process of UX Design, this project focused less on coding and more on the empathetic and aesthetic principles of UX by conducting research and interviewing with real people.'
+        },
+        {
+            name: 'Automating the Restaurant Experience!',
+            url: 'works/restaurant.html',
+            desc: 'Storyboard & Wireframe. Wireframe designed in Figma.'
+        },
+        {
+            name: 'CookEase – UX Case Study',
+            url: 'works/cookease.html',
+            desc: 'A UX case study for a cooking companion app. Research, wireframes, and design process for a recipe and meal planning tool.'
+        },
+        {
+            name: 'Craigslist Redesign – UX Case Study',
+            url: 'works/craigslist.html',
+            desc: 'A UX case study redesigning Craigslist for improved usability, navigation, and aesthetics.'
+        },
+        {
+            name: 'Venmo Redesign – UX Case Study',
+            url: 'works/Venmo Redesign.pdf',
+            desc: 'A UX redesign of the Venmo app, focusing on user flows, accessibility, and modern UI. (PDF)',
+            isPdf: true
+        },
+        {
+            name: 'Stovetop Talk: Voice-Based Cooking Interface',
+            url: 'works/stovetop.html',
+            desc: 'A UX case study for a voice-based cooking interface, including design justification, use case, prototype, and reflection.'
+        },
+        {
+            name: 'JAGG Zoo App',
+            url: 'https://www.figma.com/proto/i6VP2paUHPsDQTLlyyjeHk/Prototype-3---Zoo-App?node-id=0-1&t=z5NWakPPH1sSd0HC-1',
+            desc: 'A mobile app for the JAGG Zoo designed in Figma',
+            isWebsite: true
+        },
+        {
+            name: 'Fashion App',
+            url: '',
+            desc: 'A fashion app for the HCI/UX Capstone. (In progress)',
+            inProgress: true
+        }
+    ];
+    const creative = [];
+
+    function showSection(section) {
+        const sectionContent = document.getElementById('section-content');
+        const sectionTitle = document.getElementById('section-title');
+        const mainWindow = document.getElementById('main-window');
+        const homeContent = document.getElementById('home-content');
+        let label = '';
+            if (section === 'home') {
+                // Hide window, show home content
+                mainWindow.style.display = 'none';
+                homeContent.style.display = '';
+                homeContent.innerHTML = '<div style="height:120px"></div>';
+            } else {
+                // Show window, hide home content
+                mainWindow.style.display = '';
+                homeContent.style.display = 'none';
+                if (section === 'projects') {
+                    label = 'projects';
+                    // Example image paths, replace with your actual images/gif
+                    const images = [
+                        'sharethrift.png',
+                        'parks.png',
+                        'tree-01.gif',
+                        'lang.png'
+                    ];
+                    sectionContent.innerHTML = `<div class="releases-grid">${projects.map((p, i) => `
+                        <div class="window release-item">
+                            <div class="title-bar">
+                                <div class="title-bar-text">${p.name}</div>
+                            </div>
+                            <div class="window-body">
+                                <img src="${images[i % images.length]}" alt="${p.name}" style="width:100%; height:120px; display:block; object-fit:cover; margin-bottom:10px; border-radius:4px;" />
+                                <p>${p.desc}</p>
+                                <a href="${p.url}" target="_blank" style="width:100%;display:block;margin-top:10px;text-align:center;"><button class="button" style="width:100%;font-size:1em;">Learn More</button></a>
+                            </div>
+                        </div>
+                    `).join('')}</div>`;
+                } else if (section === 'ux') {
+                    label = 'ux';
+                    // Example image paths for UX items, replace with your actual images/gif
+                    const uxImages = [
+                        'liveline.png',
+                        'works/img/3.png',
+                        'works/img/c4.png',
+                        'works/img/cr1.png',
+                        'works/img/v1.png',
+                        'works/img/s1.png',
+                        'works/img/z1.png',
+                        'https://placehold.co/400x120?text=Fashion+App+(WIP)'
+                    ];
+                    sectionContent.innerHTML = `<div class="releases-grid">${[...ux].reverse().map((u, i) => `
+                        <div class="window release-item ux-release-item">
+                            <div class="title-bar">
+                                <div class="title-bar-text">${u.name}</div>
+                            </div>
+                            <div class="window-body">
+                                <img src="${uxImages[(ux.length-1-i) % uxImages.length]}" alt="${u.name}" style="width:100%; height:120px; display:block; object-fit:cover; margin-bottom:10px; border-radius:4px;" />
+                                <p>${u.desc}</p>
+                                <div class="button-wrapper">
+                                  ${u.inProgress ? `<button class=\"button\" style=\"width:100%;font-size:1em;\" disabled>In Progress</button>` : `<a href=\"${u.url}\" ${(u.isPdf || u.isWebsite) ? 'target=\"_blank\"' : ''} style=\"width:100%;display:block;text-align:center;\"><button class=\"button\" style=\"width:100%;font-size:1em;\">Learn More</button></a>`}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}</div>`;
+                } else if (section === 'creative') {
+                    label = 'creative';
+                    sectionContent.innerHTML = `<div class="releases-grid">${creative.length ? creative.map(c => `
+                        <div class="window release-item">
+                            <div class="title-bar">
+                                <div class="title-bar-text">${c.name}</div>
+                            </div>
+                            <div class="window-body">
+                                <a href="${c.url}" target="_blank"><h3>${c.name}</h3></a>
+                                <p>${c.desc}</p>
+                            </div>
+                        </div>
+                    `).join('') : '<p>Error loading Creative Application.</p>'}</div>`;
+                }
+                if (sectionTitle) sectionTitle.textContent = `jason-hankins/${label}`;
+                document.getElementById('resize-handle').style.display = '';
+            }
+        }
+    window.showSection = showSection;
+
+    // --- About Floating Window ---
+    function showAboutWindow() {
+        let aboutWin = document.getElementById('about-window');
+        if (!aboutWin) {
+            aboutWin = document.createElement('div');
+            aboutWin.id = 'about-window';
+            aboutWin.className = 'window myspace-profile';
+            aboutWin.style.position = 'fixed';
+            aboutWin.style.left = '50%';
+            aboutWin.style.top = '50%';
+            aboutWin.style.transform = 'translate(-50%,-50%)';
+            aboutWin.style.zIndex = '1000';
+            aboutWin.style.maxWidth = '340px';
+            aboutWin.style.minWidth = '220px';
+            aboutWin.style.cursor = 'default';
+            aboutWin.style.background = 'rgba(192,192,192,0.88)';
+            aboutWin.style.backdropFilter = 'blur(2px)';
+            aboutWin.innerHTML = `
+                <div class="title-bar" id="about-title-bar">
+                    <div class="title-bar-text">About the Developer</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" id="about-close-btn"></button>
+                    </div>
+                </div>
+                <div class="window-body" style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+                    <img src="pfp.png" alt="Profile Picture" style="width:90px;height:90px;border-radius:8px;border:2px solid #888;box-shadow:2px 2px 0 #fff,4px 4px 0 #888;image-rendering:pixelated;">
+                    <div style="text-align:center;">
+                        <h3 style="margin-bottom:2px;">Jason Hankins</h3>
+                        <div style="font-size:0.95em;opacity:0.8;">Philadelphia, PA</div>
+                        <div style="margin:8px 0 0 0;font-size:0.98em;">Web Developer, UX Designer, and Creative Technologist. <br> Loves retro tech, pixel art, and building cool things for the web.</div>
+                    </div>
+                    <div style="width:100%;margin-top:10px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+                        <b>Contact:</b>
+                        <div style="display:flex;gap:14px;justify-content:center;align-items:center;">
+                            <a href="https://www.linkedin.com/in/jasonhankins1" target="_blank" style="display:flex;align-items:center;gap:4px;text-decoration:none;">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width:20px;height:20px;vertical-align:middle;filter:grayscale(0.2);">
+                                <span style="font-size:0.98em;">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/jason-t-hankins" target="_blank" style="display:flex;align-items:center;gap:4px;text-decoration:none;">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width:20px;height:20px;vertical-align:middle;filter:grayscale(0.2);">
+                                <span style="font-size:0.98em;">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(aboutWin);
+            // Drag logic
+            let isDragging = false, dragOffsetX = 0, dragOffsetY = 0;
+            const titleBar = aboutWin.querySelector('.title-bar');
+            titleBar.style.cursor = 'move';
+            titleBar.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                dragOffsetX = e.clientX - aboutWin.offsetLeft;
+                dragOffsetY = e.clientY - aboutWin.offsetTop;
+                document.body.style.userSelect = 'none';
+            });
+            window.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                aboutWin.style.left = (e.clientX - dragOffsetX) + 'px';
+                aboutWin.style.top = (e.clientY - dragOffsetY) + 'px';
+                aboutWin.style.transform = '';
+            });
+            window.addEventListener('mouseup', function() {
+                isDragging = false;
+                document.body.style.userSelect = '';
+            });
+            // Close button
+            aboutWin.querySelector('#about-close-btn').onclick = function() {
+                aboutWin.remove();
+                // Remove hash if About was open
+                if (window.location.hash === '#about') {
+                    history.replaceState(null, '', window.location.pathname);
+                    showSection('home');
+                }
+            };
+        } else {
+            aboutWin.style.display = '';
+        }
+    }
+
+    function closeMainWindow() {
+        showSection('home');
+    }
+
+    // Show section based on hash, or home by default
+    function openSectionFromHash() {
+        const hash = window.location.hash.replace('#', '');
+        if (hash && ['projects','ux','creative'].includes(hash)) {
+            showSection(hash);
+        } else {
+            showSection('home');
+        }
+    }
+    window.addEventListener('DOMContentLoaded', openSectionFromHash);
+    window.addEventListener('hashchange', openSectionFromHash);
+
+    </script>
+        
+</body>
+</html>

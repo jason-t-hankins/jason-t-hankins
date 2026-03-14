@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CookEase – UX Case Study</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <style>
+    .window-body, .window-body p, .window-body h2, .window-body h3, .window-body h4, .window-body h5, .window-body h6 {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif !important;
+    }
+    .window-body p {
+      font-size: 1.18em;
+      line-height: 1.7;
+      margin-bottom: 1.1em;
+      color: #222;
+    }
+    .window-body h2, .window-body h3 {
+      font-weight: 600;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: #1a1a1a;
+      letter-spacing: 0.01em;
+    }
+    .portfolio-item {
+      max-width: 820px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.92);
+      border-radius: 10px;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+      padding: 2.2em 2em 2em 2em;
+    }
+    .window-body img {
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+      border-radius: 6px;
+    }
+    @media (max-width: 700px) {
+      .portfolio-item {
+        padding: 1.1em 0.5em;
+      }
+      .window-body p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="background-welcome" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-10;pointer-events:none;width:100vw;text-align:center;">
+    <span style="color:white;opacity:0.35;font-size:1.3rem;letter-spacing:2px;user-select:none;">welcome to jason's site! open an application above</span>
+  </div>
+  <main>
+    <div id="main-window" class="window" style="max-width:48rem; margin:32px auto 0 auto; min-height:320px; background: #c0c0c0;">
+      <div class="title-bar">
+        <div class="title-bar-text">CookEase – UX Case Study</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="window.location.href='../index.html#ux'" title="Close"></button>
+        </div>
+      </div>
+      <div class="window-body" id="section-content" style="overflow-y:scroll; height:60vh; min-height:120px;">
+        <div class="portfolio-item">
+          <p>CookEase is a proposal for a tool to support everyday cooks in the kitchen. The design aims to help people keep track of their recipes in an easy-to-understand format. This project was used to support our individual understanding of Human-Computer Interaction, and by following the design principles from our studies, we were able to produce a solution that keeps the user experience in mind.</p>
+          <h3>Details</h3>
+          <p><b>Timeline:</b> 10 weeks<br><b>Team:</b> 5 UX Designers<br><b>Role:</b> Research & Design</p>
+          <p><i>Above is the wireframe design for the CookEase homepage.</i></p>
+          <img src="img/c1.png" alt="CookEase Homepage Wireframe" style="display:block;margin:18px auto;max-width:100%;" />
+          <h3>Proposal</h3>
+          <p>The project began with a proposal for a potential design. We started our work by first questioning what was a potential problem space we could work in. We then created the problem statement shown below:</p>
+          <blockquote style="background:#f6f6f6;border-left:4px solid #bbb;padding:0.7em 1em;margin:1em 0;">
+            Individuals or families with dietary restrictions (e.g., food allergies, vegetarian, vegan, kosher, gluten-free, diabetic, etc.) need customized meal suggestions, especially when cooking for multiple people with different dietary needs.
+          </blockquote>
+          <h3>Stages of the Design</h3>
+          <h4>Empathize</h4>
+          <p>During this stage of the design process, our team focused on gaining a deeper understanding of users' cooking routines, dietary preferences, and meal planning habits. To achieve this, we conducted interviews with individuals who might be interested in a new cooking-related product. Our aim was to identify and document the challenges faced by users of similar platforms, utilizing an empathy map to gain detailed insights into our target audience. These unbiased findings would inform the design of the interface, user journey, and usability, as well as help us create detailed user personas for improved interaction with the product.</p>
+          <p>By interviewing users and analyzing existing apps that track eating habits and provide recipe suggestions, we aimed to uncover the key pain points and decision-making factors involved in meal preparation and planning. In Empathy and Experience in HCI, Wright and McCarthy encourage us to create “for the full range of human experience”, so we tried to keep that in mind (Wright & McCarthy, 2008). We explored topics such as dietary restrictions, motivations for cooking, timing of meal preparation, and whether users track their food intake. Ultimately, our goal was to understand the reasons behind individuals’ food choices and how they plan their menus for the week.</p>
+          <p>To deepen our understanding of the user experience for meal planning, our team explored and documented interaction with several apps in dietary tracking, meal planning, and recipe organization. These applications included MyFitnessPal, Home Chef, SNAQ, and Umami Recipe. Across these apps, we observed a common frustration with manual data entry, which felt tedious and time-consuming, which often deterred users from consistent usage.</p>
+          <p><i>The Empathy Map above helps describes the feelings of the interviewees</i></p>
+          <img src="img/c2.png" alt="Empathy Map" style="display:block;margin:18px auto;max-width:100%;" />
+          <table style="width:100%;margin:1.5em 0;background:#f8f8f8;border-radius:6px;overflow:hidden;">
+            <tr><th style="text-align:left;padding:0.5em 0.7em;">Pain</th><th style="text-align:left;padding:0.5em 0.7em;">Gain</th></tr>
+            <tr><td style="padding:0.5em 0.7em;">Manual logging of data<br>Limited and repetitive meal plan options<br>Lack of flexibility with meal planning<br>Process is tedious</td><td style="padding:0.5em 0.7em;">Customization according to dietary needs<br>Inclusive recipe options<br>Simplified tracking and logging<br>Community sharing</td></tr>
+          </table>
+          <p>Some key findings from the research included:</p>
+          <ul style="margin-left:1.5em;">
+            <li>Customization for specific diets (e.g., kosher, lactose-free) and culturally diverse recipes.</li>
+            <li>Simplified logging (e.g., barcode scanning, health device integration).</li>
+            <li>Recipe suggestions based on available ingredients and meal prep efficiency (e.g., automated grocery lists).</li>
+            <li>Community sharing for exchanging recipes and tips.</li>
+          </ul>
+          <h4>Ideation</h4>
+          <p>This phase of the design process consisted of generating as many ideas as possible as a team.  Through our research and empathizing from the last stage, we were able to come up with potential solutions that reflected the problems of the people we interviewed. In Empathy on the Edge, the authors write that “Empathy is a powerful force. Research shows that when we are empathetic, we enhance our ability to receive and process information” (Battarbee et al., 2014). By using our empathy, we were able to generate solutions that not only did we find useful, but our users could as well. Some of the solutions included:</p>
+          <ul style="margin-left:1.5em;">
+            <li>Creating clusters for allergies and dietary restrictions.</li>
+            <li>Scheduling your meals and plan them for the week.</li>
+            <li>Making the app adapt to the seasonal supply.</li>
+            <li>Store preferences and suggest recipes accordingly.</li>
+            <li>Allow users to create mood boards with specific preferences for certain days.</li>
+          </ul>
+          <img src="img/c3.png" alt="Ideation Sketches" style="display:block;margin:18px auto;max-width:100%;" />
+          <p>After generating these 28 initial ideas, we reflected on how this task could have been approached more efficiently. We realized that categorizing our concepts into areas such as usability, performance, and overall user experience would have streamlined the ideation process. While some ideas overlapped, this reflection allowed us to step back, reassess, and develop new, more tailored solutions that better aligned with the objectives of our project. Through this exercise, we gained valuable insight into how teams of designers collaborate to generate many ideas for a potential product.</p>
+          <h4>Prototype</h4>
+          <p>Building on our research and understanding of user needs related to recipe organization, cooking, and meal planning, our team identified five essential pages for the prototype and testing phase of the project: User Setup & Login, Home, Recipe Search, Recipe Input, and Meal Planning. Each component of the application aims to solve a problem that we found in our empathizing stage or reflect a solution that we made in the ideation process. Below are the wireframes we designed:</p>
+          <img src="img/c4.png" alt="Wireframe Overview" style="display:block;margin:18px auto;max-width:100%;" />
+          <ul style="margin-left:1.5em;">
+            <li>Wireframe describing a user login/account creation.</li>
+            <li>Component for scanning a recipe with a camera feature.</li>
+            <li>Recipe search feature where users can filter and search for recipes.</li>
+            <li>Meal planning calendar wireframe</li>
+          </ul>
+          <img src="img/c5.png" alt="Prototype Screens" style="display:block;margin:18px auto;max-width:100%;" />
+          <p>After creating these modules, we then examined the user flow for our respective pages to guide our designs and ensure a seamless user experience. Through user testing, we evaluated the strengths and weaknesses of our designs, documenting key insights to refine our approach. Each team member outlined their design process and rationale, incorporating user feedback to explore potential enhancements. In a collective review, we analyzed the advantages and areas for improvement across all pages to guide the next steps in developing a cohesive and effective final design solution.</p>
+          <table style="width:100%;margin:1.5em 0;background:#f8f8f8;border-radius:6px;overflow:hidden;">
+            <tr><th style="text-align:left;padding:0.5em 0.7em;">Module</th><th style="text-align:left;padding:0.5em 0.7em;">Strengths</th><th style="text-align:left;padding:0.5em 0.7em;">Weaknesses</th></tr>
+            <tr><td style="padding:0.5em 0.7em;">Homepage</td><td style="padding:0.5em 0.7em;">Personalized, User-Friendly Layout</td><td style="padding:0.5em 0.7em;">Unclear Button Labels, Repeating/Confusing Information</td></tr>
+            <tr><td>User Input</td><td>Clear flow, Clear Feedback</td><td>Skip Button Missing in Specific Sections</td></tr>
+            <tr><td>Input Recipe</td><td>Clear Flow, Multiple Input Options</td><td>Editing Limitations</td></tr>
+            <tr><td>Search For Recipe</td><td>Recent Searches, Recipe Preview</td><td>Overwhelming Filter List</td></tr>
+            <tr><td>Meal Plan</td><td>Personalization, Customizability</td><td>Cannot Add Personal Recipes</td></tr>
+          </table>
+          <p>In our assessment of the different styles of all the different wireframes, we identified the User Input page as foundational to the app's overall functionality and user experience. This page is critical for enabling key features, aligning with user needs from the empathize phase, and addressing the core problem outlined in our project. Based on its significance and user testing feedback, our team chose to prioritize refining the User Input page. Strengthening its design and functionality will provide a robust foundation for the app, supporting the development and improvement of other prototypes moving forward.</p>
+          <img src="img/c6.png" alt="User Input Page Wireframe" style="display:block;margin:18px auto;max-width:100%;" />
+          <h3>Conclusion</h3>
+          <p>Through our extensive research in our empathizing stage, along with our process of ideation, we were able to construct concrete solutions to the problems of our prospective users. In our prototypes, we created five different interfaces: User Setup & Login, Home, Recipe Search, Recipe Input, and Meal Planning. All these different creations contain components that were made from our research and interviews. By assessing the prototypes after they were constructed, we were able to recognize our own bias and blindness to certain features that may not have been the best for users and were able to go back and rework them. What was left after this process was a more polished product that better reflects the prospective user’s needs.</p>
+          <p>While considering potential next steps if we were to further develop this product, we would probably work to make a functional prototype. In this prototype, we would use a more complex prototyping tool such as Axure to allow the saving of variables and actual navigational redirects when showcasing the product. Other features we would continue to ideate might include:</p>
+          <ul style="margin-left:1.5em;">
+            <li>Collaborative recipes</li>
+            <li>Focus on a social media-based design</li>
+            <li>Account customization</li>
+          </ul>
+          <p>Regardless of whether we choose to pursue this idea further, our research and prototypes have many implications for the future of human-computer interaction. The online recipe community is very fragmented, and this research serves to support a union of the various cooking groups in the online world.</p>
+          <h3>References</h3>
+          <ul style="margin-left:1.5em;">
+            <li>Battarbee, K., Suri, J. F., Howard, S. G., & IDEO. (2014). Empathy on the Edge. IDEO.</li>
+            <li>Wright, P., & McCarthy, J. (2008, April 06). Association for Computing Machinery. Empathy and experience in HCI. <a href="https://dl.acm.org/doi/10.1145/1357054.1357156" target="_blank">https://dl.acm.org/doi/10.1145/1357054.1357156</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Jason Hankins. with ❤.</p>
+    </div>
+  </footer>
+</body>
+</html>

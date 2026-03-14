@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craigslist Redesign – UX Case Study</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <style>
+    .window-body, .window-body p, .window-body h2, .window-body h3, .window-body h4, .window-body h5, .window-body h6 {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif !important;
+    }
+    .window-body p {
+      font-size: 1.18em;
+      line-height: 1.7;
+      margin-bottom: 1.1em;
+      color: #222;
+    }
+    .window-body h2, .window-body h3 {
+      font-weight: 600;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: #1a1a1a;
+      letter-spacing: 0.01em;
+    }
+    .portfolio-item {
+      max-width: 820px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.92);
+      border-radius: 10px;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+      padding: 2.2em 2em 2em 2em;
+    }
+    .window-body img {
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+      border-radius: 6px;
+    }
+    @media (max-width: 700px) {
+      .portfolio-item {
+        padding: 1.1em 0.5em;
+      }
+      .window-body p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="background-welcome" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-10;pointer-events:none;width:100vw;text-align:center;">
+    <span style="color:white;opacity:0.35;font-size:1.3rem;letter-spacing:2px;user-select:none;">welcome to jason's site! open an application above</span>
+  </div>
+  <main>
+    <div id="main-window" class="window" style="max-width:48rem; margin:32px auto 0 auto; min-height:320px; background: #c0c0c0;">
+      <div class="title-bar">
+        <div class="title-bar-text">Craigslist Redesign – UX Case Study</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="window.location.href='../index.html#ux'" title="Close"></button>
+        </div>
+      </div>
+      <div class="window-body" id="section-content" style="overflow-y:scroll; height:60vh; min-height:120px;">
+        <div class="portfolio-item">
+          <h2>Craigslist Redesign – UX Case Study</h2>
+          <p>The aim of this project is to identify the key shortcomings of Craigslist's current design and assess the ongoing need for such a platform in today’s rapidly evolving digital landscape. By understanding both the current usefulness and limitations of Craigslist, we hope to inform our redesign process to better meet current user needs. Through user interviews, surveys, heuristic evaluations, and many other tools, we have gained valuable insights into both the strengths and weaknesses of the site.</p>
+          <p>This paper serves as documentation to explain our Craigslist redesign, showing how we solve the three problems identified in our heuristic evaluation we conducted. Through our research, we were able to determine three problems, relating to the aesthetics, navigation, and accessibility of the site.</p>
+          <p>Three user flows explained in this document show how our redesign of Craigslist can be navigated and utilized. These flows explain how to find a post in the calendar, how to make a thread on a discussion post, and how to create a normal post.</p>
+          <p>Ultimately, our goal in this refinement is to enhance its usability and security, allowing Craigslist to reclaim its relevance as a valuable resource amongst competitors in today’s marketplace. By creating a more visually appealing site with a focus on improving navigation and efficiency, we complete these goals and solve the problems of the original site.</p>
+          <a target="_blank" href="https://www.figma.com/proto/tkPdS9BUJ3BOrwF2giOlwm/Craigslist-Redesign?t=T3OVOca1T7FDb2pZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=7-578">
+            https://www.figma.com/proto/tkPdS9BUJ3BOrwF2giOlwm/Craigslist-Redesign?t=T3OVOca1T7FDb2pZ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=7-578
+          </a>
+          <h3>Use of Previous Findings</h3>
+          <p>Through our heuristic evaluation, we were able to determine key problems with the functionality of the craigslist website. Below is a chart of some of the important issues we set out to resolve:</p>
+          <table style="width:100%;margin:1.5em 0;background:#f8f8f8;border-radius:6px;overflow:hidden;">
+            <tr><th>Problem ID</th><th>Heuristic Violated</th><th>Problem Location</th><th>Description</th><th>Severity</th></tr>
+            <tr><td>Problem 1</td><td>User Control and Freedom</td><td>All pages</td><td>No clear navigation to return to previous page. There is a back arrow, but it doesn't take you back to a prior page</td><td>Medium</td></tr>
+            <tr><td>Problem 2</td><td>Flexibility and Efficiency of use</td><td>Home page / Category</td><td>Users need to scroll through long lists of categories and subcategories to navigate where they need to get to</td><td>Medium</td></tr>
+            <tr><td>Problem 3</td><td>Aesthetic and minimalist Design</td><td>Home page</td><td>The home page is messy and overwhelming. Too much text to navigate with too many subcategories to sift through</td><td>High</td></tr>
+          </table>
+          <p><i>Figure 1. A small chart containing heuristics violated on the original craigslist site.</i></p>
+          <p>From this chart, we determined important issues to consider when developing our prototype.</p>
+          <p>The first problem was addressed when making the wireframe for a detailed posting page. On the post page, we added included more navigation and user freedom, specifically in the form of a back button near the top of the page. Users can now return to their browsing from wherever they left off. This supports Nielsen’s Heuristic of User Control and Freedom.</p>
+          <p>The second problem was addressed on multiple different pages. This can specifically be seen on the specified category page. When a user navigates to a category on the regular craigslist site, you cannot see subcategories clearly. Now, we have added them at the bottom of the page so the user can see each individual one. Notice how the subcategories now contain icons to help the user remember them.</p>
+          <p>The third problem mentioned in the chart is probably the most important one we considered in our redesign. How you greet the user is the most important part of a website. If you greet the user poorly with a cluttered homepage, they will not want to engage in the site further. Our interviews and survey data led us to the decision that we would make a massive overhaul of the homepage. We now greet the user with some information about the site, as well as hiding the subcategories on another page to avoid overwhelming the user. The user is now encouraged to make an account, as well as make a post multiple times on the homepage. This minimalist approach that Nielsen suggests in his usability heuristics will most likely keep the user more engaged in the site.</p>
+          <h3>Wireframe/Prototype Quality & User Flows</h3>
+          <p>The redesigned Craigslist Prototype contains eight new pages: the homepage, the discussion board, a category page, a post page, a calendar page, an account page, a tool for creating posts, and a simple dialog box for chatting with people. These redesigns were made from the suggestions we found in our heuristic evaluation, as well as our own creative thoughts about how to fix the site. Our main change is the improvement of the originally cluttered home screen. There are various navigational changes and flows of information, specifically pertaining to the subcategories which initially flooded the entire homepage.</p>
+          <p>When developing the prototype, we considered three different user flows that each used the site in a different way:</p>
+          <ul style="margin-left:1.5em;">
+            <li>Creating a Post</li>
+            <li>Creating a Thread in a Discussion Board</li>
+            <li>Finding a Post in the Calendar tool</li>
+          </ul>
+          <p>There are now multiple intuitive ways to create a post. To create a post, the user can navigate to the categories section from the homepage. The user can then click on the category they want to post in. They are then transferred to the page relating to that category, where the user can see other posts. They then navigate to the create post button at the bottom of the page, where they are taken to a new post page. They can enter whatever details they like, and then click post when they are done. (See appendix D for a detailed diagram)</p>
+          <p>The next flow is about creating a thread in a discussion board. The user starts on the homepage but clicks on the discussion board section of the categories. They are then taken to a unique discussion board page where they can see various threads of a discussion. At the bottom of the page, they are prompted to add a thread. Like the create post page, The user enters their details and clicks post.</p>
+          <p>The final flow shows how to find a post through the calendar tool. Whatever the user may be looking for, they can find it with the calendar tool by scrolling to the bottom of the homepage or selecting it from the top navigation bar. Once they go to the calendar tool, they can enter various parameters like date, category, keyword, etc. Once they submit, the bottom component will be populated with the search results. When the user sees the post they want, they can click on it and be routed to its page.</p>
+          <h3>Conclusion</h3>
+          <p>When sharing this design with peers to test its functionality, we noticed a couple of shortcomings with the prototype. The designers we shared it with noted that the discussion board was still merged with the rest of the categories, making it confusing for the users. If given more time to iterate through the design process, we would make the distinction between posts and discussions more apparent.</p>
+          <p>Craigslist is an important site that provides many people with online resources that they could never get in the real world. A ‘virtual bulletin’ is a such a valuable tool for people to share ideas, so we thought this would be an important redesign to do for our research. Through our heuristic evaluations and all our other previous research, we recognized that human-centered design is an important concept, and without it, we end up with antiquated sites like craigslist that lose touch with the next generation.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Jason Hankins. with ❤.</p>
+    </div>
+  </footer>
+</body>
+</html>
