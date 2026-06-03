@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StylX: Styling Assistant App - UX Case Study</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <style>
+    @font-face {
+      font-family: 'DS';
+      src: url('../fonts/Nintendo-DS-BIOS.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .window-body, .window-body h2, .window-body h3, .window-body h4, .window-body h5, .window-body h6 {
+      font-family: 'DS', sans-serif !important;
+      text-align: center;
+    }
+    .window-body p {
+      font-size: 1.18em;
+      line-height: 1.7;
+      margin-bottom: 1.1em;
+      color: #222;
+      text-align: left;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif !important;
+    }
+    .window-body h2, .window-body h3 {
+      font-weight: 600;
+      margin-top: 1.5em;
+      margin-bottom: 0em;
+      color: #1a1a1a;
+      letter-spacing: 0.01em;
+    }
+    .portfolio-item {
+      max-width: 100%;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.92);
+      border-radius: 10px;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+      padding: 2.2em 2em 2em 2em;
+    }
+    .window-body img {
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+      border-radius: 6px;
+    }
+    #research p{
+      padding: 1em;
+    }
+    @media (max-width: 700px) {
+      .portfolio-item {
+        padding: 1.1em 0.5em;
+      }
+      .window-body p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="background-welcome" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-10;pointer-events:none;width:100vw;text-align:center;">
+    <span style="color:white;opacity:0.35;font-size:1.3rem;letter-spacing:2px;user-select:none;">welcome to jason's site! open an application above</span>
+  </div>
+  <main>
+    <div id="main-window" class="window" style="max-width:60rem; margin:32px auto 0 auto; min-height:320px; background: #c0c0c0;">
+      <div class="title-bar">
+        <div class="title-bar-text">jason-hankins/ux/'STYLX: Styling Assistant App - UX Case Study'</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="window.location.href='../index.html#ux'" title="Close"></button>
+        </div>
+      </div>
+      <div class="window-body" id="section-content" style="overflow-y:scroll; height:80vh; min-height:120px;">
+        <div class="portfolio-item">
+          <img src="img/stylx/logo.png" alt="StylX Logo" style="width:100%; height:auto; margin-bottom:-2em;">
+          <h3 style="width:100%; margin:auto;">Styling Assistant Mobile Application</h3>
+          <br>
+          
+          <h2>Project Overview</h2>
+          <p>This UI/UX project is a fashion app that helps users build and develop their personal style through curated recommendations, outfit planning, and wardrobe organization tools. The goal being to function as a digital closet and styling assistant, allowing users to upload their current wardrobe, receive AI-generated outfit suggestions based on their saved preferences and the latest fashion trends, and even shop smarter by seeing how potential purchases fit within their existing style.</p>
+              
+          <div style="display:flex; align-items:flex-start; gap:20px;">
+            
+            <div style="flex:1;">
+              <img src="img/stylx/timeline1.png" alt="StylX App Screenshots" style="width:80%; height:200px; object-fit:cover; image-rendering:smooth;">
+              <img src="img/stylx/timeline2.png" alt="StylX App Screenshots" style="width:80%; height:200px; object-fit:cover; image-rendering:smooth;">
+            </div>
+
+            <div style="position:relative; flex:0 0 25%; align-self:stretch;">
+              <p style="margin-bottom: -3em;">View Live Application below!</p>
+              <img src="img/stylx/phone.png" alt="Vertical" style="width:100%; height:100%; object-fit:cover; image-rendering:smooth; border-radius:0px; box-shadow:0 0 0 0;">
+              <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+                          background:rgba(255,255,255,0.2); backdrop-filter:blur(10px);
+                          -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.4);
+                          border-radius:12px; padding:16px 24px; text-align:center; white-space:nowrap;">
+                <a href="https://stylx.netlify.app/" target="_blank"
+                  style="text-decoration:none; font-size:1vh; font-weight:600;">
+                  View Live App
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <!-- </div> -->
+          
+          <div id="research" style="background-color: silver;border-radius: 10px;">
+          <h3>i.Research</h3>
+          <center><hr></center>
+
+          <h2>Competitive Analysis</h2>
+          <div style="display:flex; align-items:flex-start; gap:12px; max-width:800px;">
+            <div style="display:flex; flex-direction:column; gap:8px; flex:0 0 40%;">
+              <p style="margin:0; font-size:0.85em;">While considering potential competitors and sites with features that we wanted to consider in our own development, we compared four websites: Pinterest, Everskies, Grailed, & Depop.</p>
+              <img style="top: 50%; left: 50%; height:50%;" src="img/stylx/profilepic.png" alt="...">
+            </div>
+            <img src="img/stylx/comp.png" alt="Competitive Analysis" style="flex:0 0 60%; width:88%;">
+          </div>
+
+          <h2>Literature Review</h2>
+          <p>Building on our competitive analysis, we conducted a literature review, drawing on academic sources to validate our theoretical approaches. This research highlighted two critical areas for STYLX: the potential of Gamification & Personalization in fashion retail, and the impact of AI in trend forecasting and user experience.</p>
+          <img src="img/stylx/lit1.png" alt="StylX App Screenshots" style="width:40%; height:200px; image-rendering:smooth;">
+          <img src="img/stylx/lit2.png" alt="StylX App Screenshots" style="width:40%; height:200px; image-rendering:smooth;">
+          
+          <h2>User Personas</h2>
+          <p>The following persona was derived from clustering common patterns in preferences, pain points, and goals from the research, ensuring design choices target distinct but representative audience segments: </p>
+          <img src="img/stylx/persona.png" alt="StylX App Screenshots" style="width:80%; height:300px; image-rendering:smooth;">
+
+          <h2>User Survey</h2>
+          <p>We set out to research our proposed age demographic of 18-28 with our design concepts in mind, using Qualtrics to gain insights and ask questions in the form of a survey we published online with around 50 responses.</p>
+          <img src="img/stylx/survey1.png" alt="StylX App Screenshots" style="width:80%; height:200px; image-rendering:smooth;">
+          <img src="img/stylx/survey2.png" alt="StylX App Screenshots" style="width:80%; height:300px; image-rendering:smooth;">
+          <br>
+          </div>
+
+          <h3>ii.Design</h3>
+          <center><hr></center>
+
+          <h2>Storyboards & Wireframe</h2>
+          <img src="img/stylx/storyboard.png" alt="StylX App Screenshots" style="width:40%; height:300px; image-rendering:smooth;">
+          <img src="img/stylx/wireframe.png" alt="StylX App Screenshots" style="width:40%; height:300px; image-rendering:smooth;">
+
+          <h2>Low-Fidelity Prototype</h2>
+          <div style="position:relative; display:inline-block; width:80%;">
+            <img src="img/stylx/proto1.png" alt="StylX App Screenshots" style="width:100%; height:400px; object-fit:cover; image-rendering:smooth;">
+            <div style="position:absolute; top:50%; left:50%; max-width:500px; transform:translate(-50%, -50%);
+                        background:rgba(104, 157, 221, 0.2); backdrop-filter:blur(10px);
+                        -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.4);
+                        border-radius:12px; padding:16px 24px; text-align:center; white-space:nowrap;">
+              <a href="https://www.figma.com/proto/wy08eDZFzV1jvG6S1sbWbh/Fashion-Prototype?node-id=0-1&t=gJL0vZD8MwE7z2Hy-1" target="_blank" 
+                style="text-decoration:none; font-weight:600; font-size:4vh;">
+                Click to view Prototype 1!
+              </a>
+            </div>
+          </div>
+
+          <h2>High-Fidelity Prototype</h2>
+          <div style="position:relative; display:inline-block; width:80%;">
+            <img src="img/stylx/proto2.png" alt="StylX App Screenshots" style="width:100%; height:400px; object-fit:cover; image-rendering:smooth;">
+            <div style="position:absolute; top:50%; left:50%; max-width:500px; transform:translate(-50%, -50%);
+                        background:rgba(104, 157, 221, 0.2); backdrop-filter:blur(10px);
+                        -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.4);
+                        border-radius:12px; padding:16px 24px; text-align:center; white-space:nowrap;">
+              <a href="https://www.figma.com/proto/2WZWcQBKlrJes57pVBdeMV/STYLX-High-Fi?node-id=54-2745&t=dOMJjWtM26xRN3q0-1" target="_blank" 
+                style="text-decoration:none; font-weight:600; font-size:4vh;">
+                Click to view Prototype 2!
+              </a>
+            </div>
+          </div>
+        
+          <h2>Final Product: React Native Application</h2>
+          <div style="position:relative; display:inline-block; width:80%;">
+            <img src="img/stylx/app.png" alt="StylX App Screenshots" style="width:100%; height:400px; object-fit:cover; image-rendering:smooth;">
+            <div style="position:absolute; top:50%; left:50%; max-width:500px; transform:translate(-50%, -50%);
+                        background:rgba(104, 157, 221, 0.2); backdrop-filter:blur(10px);
+                        -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.4);
+                        border-radius:12px; padding:16px 24px; text-align:center; white-space:nowrap;">
+              <a href="https://stylx.netlify.app/" target="_blank" 
+                style="text-decoration:none; font-weight:600; font-size:4vh;">
+                Click to see the live application!
+              </a>
+            </div>
+          </div>
+          <br>
+          <a href="https://github.com/jason-t-hankins/stylx" target="_blank" style="display:inline-block; margin-top:12px; text-decoration:none; font-weight:600; font-size:1.2em;">
+            View Code on GitHub
+          </a>
+
+          <h2>Future Considerations</h2>
+          <p>Through our process of research and design, we were able to create an interface from the ground up of a system that could act as a styling assistant app that is fun, backed by research, and conducive to the user experience. In the end, we performed usability testing with the Figma design in Maze and gained further insights to iterate our design before & after coding the application. This highlights the impact of costly redesigns and stresses the importance of the design process before development. </p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Jason Hankins. with ❤.</p>
+    </div>
+  </footer>
+</body>
+</html>
